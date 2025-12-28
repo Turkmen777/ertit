@@ -1,55 +1,184 @@
 export default function Home() {
   return (
-    <main style={{ padding: '40px', maxWidth: '800px', margin: '0 auto' }}>
-      <h1 style={{ color: '#008000', fontSize: '2.5rem' }}>
-        🌿 Ertit - Türkmenistanyň blogy
-      </h1>
-      
-      <p style={{ fontSize: '1.2rem', margin: '20px 0' }}>
-        <strong>Hoş geldiňiz!</strong> Bu ýerde Türkmenistanyň täze habarlary, 
-        sport wakalary, tehnologik täzelikler we medeniýet barada makalalar.
-      </p>
-      
-      <div style={{ background: '#f0f9f0', padding: '20px', borderRadius: '10px' }}>
-        <h2 style={{ color: '#006600' }}>🎯 Kategoriýalar:</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px', marginTop: '15px' }}>
+    <div style={{
+      fontFamily: 'Arial, sans-serif',
+      maxWidth: '1000px',
+      margin: '0 auto',
+      padding: '20px'
+    }}>
+      {/* Шапка */}
+      <header style={{
+        background: 'linear-gradient(90deg, #008000 0%, #FFFFFF 50%, #CC0000 100%)',
+        padding: '30px',
+        borderRadius: '10px',
+        color: 'white',
+        textAlign: 'center',
+        marginBottom: '30px'
+      }}>
+        <h1 style={{ fontSize: '2.8rem', margin: '0' }}>🌿 ERTIT</h1>
+        <p style={{ fontSize: '1.3rem', opacity: '0.9' }}>
+          Türkmenistanyň iň täze blogy
+        </p>
+      </header>
+
+      {/* Приветствие */}
+      <section style={{
+        background: '#f8fff8',
+        padding: '25px',
+        borderRadius: '10px',
+        marginBottom: '30px',
+        border: '2px solid #008000'
+      }}>
+        <h2 style={{ color: '#006600' }}>🎉 Hoş geldiňiz!</h2>
+        <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+          <strong>Ertit</strong> - bu Türkmenistanyň iň täze blog platformasy. 
+          Bu ýerde <strong>täze habarlar, sport wakalar, tehnologik täzelikler, 
+          medeniýet, saglyk, bilim we ýaşlar</strong> barada hünärli makalalar.
+        </p>
+        <p>
+          Her bir ulanyjy öz makalasyny ýazyp bilýär. Makala moderator tarapyndan 
+          barlanylýar we <strong>5-10 minutdan soň</strong> sahypada görkezilýär.
+        </p>
+      </section>
+
+      {/* 7 категорий */}
+      <section style={{ marginBottom: '40px' }}>
+        <h2 style={{
+          textAlign: 'center',
+          color: '#008000',
+          borderBottom: '3px solid #CC0000',
+          paddingBottom: '10px'
+        }}>
+          📚 7 SANY KATEGORIÝA
+        </h2>
+        
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '20px',
+          marginTop: '25px'
+        }}>
           {[
-            { name: '📰 Täze habarlar', color: '#4CAF50' },
-            { name: '⚽ Sport', color: '#2196F3' },
-            { name: '💻 Tehnologiýalar', color: '#9C27B0' },
-            { name: '🎭 Medeniýet', color: '#FF9800' },
-            { name: '🏥 Saglyk', color: '#F44336' },
-            { name: '📚 Bilim', color: '#3F51B5' },
-            { name: '👨‍🎓 Ýaşlar', color: '#00BCD4' }
-          ].map((cat) => (
-            <div key={cat.name} style={{
-              background: cat.color,
-              color: 'white',
-              padding: '15px',
-              borderRadius: '8px',
-              textAlign: 'center',
-              fontWeight: 'bold'
-            }}>
-              {cat.name}
+            { 
+              name: '📰 TÄZE HABARLAR', 
+              desc: 'Sonky habarlar we wakalar',
+              color: '#2E7D32'
+            },
+            { 
+              name: '⚽ SPORT', 
+              desc: 'Sport ýaryşlary we çempionatlar',
+              color: '#1565C0'
+            },
+            { 
+              name: '💻 TEHNOLOGIÝALAR', 
+              desc: 'Tehnika we programmalar',
+              color: '#6A1B9A'
+            },
+            { 
+              name: '🎭 MEDENIÝET', 
+              desc: 'Medeni we sungat wakalary',
+              color: '#EF6C00'
+            },
+            { 
+              name: '🏥 SAGLYK', 
+              desc: 'Saglygy goraýyş maslahatlar',
+              color: '#C62828'
+            },
+            { 
+              name: '📚 BILIM', 
+              desc: 'Bilim we okuw materiallar',
+              color: '#283593'
+            },
+            { 
+              name: '👨‍🎓 ÝAŞLAR', 
+              desc: 'Ýaşlar üçin meňzeşlikler',
+              color: '#00838F'
+            }
+          ].map((category, index) => (
+            <div 
+              key={index}
+              style={{
+                background: category.color,
+                color: 'white',
+                padding: '25px',
+                borderRadius: '12px',
+                boxShadow: '0 5px 15px rgba(0,0,0,0.2)',
+                transition: 'transform 0.3s',
+                cursor: 'pointer'
+              }}
+              onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+              onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+            >
+              <h3 style={{ margin: '0 0 10px 0', fontSize: '1.3rem' }}>
+                {category.name}
+              </h3>
+              <p style={{ margin: '0', opacity: '0.9', fontSize: '0.95rem' }}>
+                {category.desc}
+              </p>
             </div>
           ))}
         </div>
-      </div>
-      
-      <div style={{ marginTop: '30px' }}>
-        <h3>📝 Blog barada:</h3>
-        <p>Her bir adam öz makalasyny ýazyp, moderator barlap, 5-10 minutdan soň ýerleşdirip bilýär.</p>
-        
-        <div style={{ marginTop: '20px', padding: '15px', background: '#fff3cd', borderRadius: '8px' }}>
-          <p>🚀 <strong>Ýakyn wagtda:</strong></p>
-          <ul>
-            <li>Ulanyjy hasaby (registrasiýa)</li>
-            <li>Makala ýazmak üçin forma</li>
-            <li>Moderasiýa paneli</li>
-            <li>Makalalara teswir ýazmak</li>
-          </ul>
+      </section>
+
+      {/* Как работает */}
+      <section style={{
+        background: '#e3f2fd',
+        padding: '25px',
+        borderRadius: '10px',
+        marginBottom: '30px'
+      }}>
+        <h2 style={{ color: '#0D47A1' }}>🔄 Ertit nähili işleýär?</h2>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '20px' }}>
+          {[
+            { step: '1', title: 'Registrasiýa', desc: 'Nickname saýlap, hasap açyň' },
+            { step: '2', title: 'Makala ýazmak', desc: 'Kategoriýa saýlap, makala ýazyň' },
+            { step: '3', title: 'Moderasiýa', desc: 'Moderator 5-10 minut barlar' },
+            { step: '4', title: 'Ýerleşdirme', desc: 'Barlanan makala ýerleşdirilýär' }
+          ].map((item) => (
+            <div key={item.step} style={{
+              background: 'white',
+              padding: '20px',
+              borderRadius: '8px',
+              flex: '1',
+              minWidth: '200px',
+              textAlign: 'center'
+            }}>
+              <div style={{
+                background: '#008000',
+                color: 'white',
+                width: '40px',
+                height: '40px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 15px auto',
+                fontWeight: 'bold'
+              }}>
+                {item.step}
+              </div>
+              <h3 style={{ margin: '0 0 10px 0', color: '#008000' }}>
+                {item.title}
+              </h3>
+              <p style={{ margin: '0', fontSize: '0.9rem' }}>
+                {item.desc}
+              </p>
+            </div>
+          ))}
         </div>
-      </div>
-    </main>
+      </section>
+
+      {/* Футер */}
+      <footer style={{
+        textAlign: 'center',
+        marginTop: '40px',
+        padding: '20px',
+        borderTop: '2px solid #008000',
+        color: '#666'
+      }}>
+        <p>© 2024 <strong>Ertit</strong> - Türkmenistanyň blog platformasy</p>
+        <p>🇹🇲 "Her bir söz, her bir pikiriň gymmaty"</p>
+      </footer>
+    </div>
   )
 }
