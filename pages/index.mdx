@@ -1,207 +1,577 @@
-export default function Home() {// В самое начало файла, после "export default function Home() {"
 import Navbar from '../components/Navbar';
 
 export default function Home() {
   return (
-    <div>
-      <Navbar /> {/* Добавьте эту строку */}
-      {/* остальной код остается */}
-    </div>
-  );
-}
-  return (
     <div style={{
       fontFamily: 'Arial, sans-serif',
-      maxWidth: '1000px',
-      margin: '0 auto',
-      padding: '20px'
+      minHeight: '100vh',
+      backgroundColor: '#f8fdf8'
     }}>
-      {/* Шапка */}
-      <header style={{
-        background: 'linear-gradient(90deg, #008000 0%, #FFFFFF 50%, #CC0000 100%)',
-        padding: '30px',
-        borderRadius: '10px',
-        color: 'white',
-        textAlign: 'center',
-        marginBottom: '30px'
+      {/* Навигация */}
+      <Navbar />
+      
+      {/* Основной контент */}
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '20px'
       }}>
-        <h1 style={{ fontSize: '2.8rem', margin: '0' }}>🌿 ERTIT</h1>
-        <p style={{ fontSize: '1.3rem', opacity: '0.9' }}>
-          Türkmenistanyň iň täze blogy
-        </p>
-      </header>
-<div style={{ textAlign: 'center', margin: '30px 0' }}>
-  <a href="/articles/first-article" style={{
-    display: 'inline-block',
-    background: '#CC0000',
-    color: 'white',
-    padding: '15px 30px',
-    borderRadius: '8px',
-    textDecoration: 'none',
-    fontSize: '1.1rem',
-    fontWeight: 'bold'
-  }}>
-    📖 İlkinji makalany oka → "Ertit işe başlady!"
-  </a>
-</div>
-      {/* Приветствие */}
-      <section style={{
-        background: '#f8fff8',
-        padding: '25px',
-        borderRadius: '10px',
-        marginBottom: '30px',
-        border: '2px solid #008000'
-      }}>
-        <h2 style={{ color: '#006600' }}>🎉 Hoş geldiňiz!</h2>
-        <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-          <strong>Ertit</strong> - bu Türkmenistanyň iň täze blog platformasy. 
-          Bu ýerde <strong>täze habarlar, sport wakalar, tehnologik täzelikler, 
-          medeniýet, saglyk, bilim we ýaşlar</strong> barada hünärli makalalar.
-        </p>
-        <p>
-          Her bir ulanyjy öz makalasyny ýazyp bilýär. Makala moderator tarapyndan 
-          barlanylýar we <strong>5-10 minutdan soň</strong> sahypada görkezilýär.
-        </p>
-      </section>
-
-      {/* 7 категорий */}
-      <section style={{ marginBottom: '40px' }}>
-        <h2 style={{
+        {/* Шапка */}
+        <header style={{
+          background: 'linear-gradient(135deg, #008000 0%, #006400 50%, #004d00 100%)',
+          padding: '50px 30px',
+          borderRadius: '15px',
+          color: 'white',
           textAlign: 'center',
-          color: '#008000',
-          borderBottom: '3px solid #CC0000',
-          paddingBottom: '10px'
+          marginBottom: '40px',
+          boxShadow: '0 10px 30px rgba(0, 128, 0, 0.2)'
         }}>
-          📚 7 SANY KATEGORIÝA
-        </h2>
-        
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-          gap: '20px',
-          marginTop: '25px'
+          <h1 style={{ 
+            fontSize: '3.5rem', 
+            margin: '0 0 15px 0',
+            textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
+          }}>
+            🌿 ERTIT
+          </h1>
+          <p style={{ 
+            fontSize: '1.5rem', 
+            opacity: '0.95',
+            maxWidth: '800px',
+            margin: '0 auto 25px auto',
+            lineHeight: '1.5'
+          }}>
+            Türkmenistanyň iň täze we ileri blog platformasy
+          </p>
+          <div style={{
+            display: 'inline-flex',
+            gap: '15px',
+            flexWrap: 'wrap',
+            justifyContent: 'center'
+          }}>
+            <a href="/articles/first-article" style={{
+              background: '#CC0000',
+              color: 'white',
+              padding: '12px 30px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              fontSize: '1.1rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}>
+              📖 İlkinji makalany oka
+            </a>
+            <a href="/categories" style={{
+              background: 'rgba(255,255,255,0.2)',
+              color: 'white',
+              padding: '12px 30px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              fontSize: '1.1rem',
+              border: '2px solid white',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}>
+              📚 Kategoriýalary gör
+            </a>
+          </div>
+        </header>
+
+        {/* Приветствие */}
+        <section style={{
+          background: 'white',
+          padding: '40px',
+          borderRadius: '15px',
+          marginBottom: '40px',
+          boxShadow: '0 5px 20px rgba(0,0,0,0.05)',
+          border: '1px solid #e0f0e0'
         }}>
-          {[
-            { 
-              name: '📰 TÄZE HABARLAR', 
-              desc: 'Sonky habarlar we wakalar',
-              color: '#2E7D32'
-            },
-            { 
-              name: '⚽ SPORT', 
-              desc: 'Sport ýaryşlary we çempionatlar',
-              color: '#1565C0'
-            },
-            { 
-              name: '💻 TEHNOLOGIÝALAR', 
-              desc: 'Tehnika we programmalar',
-              color: '#6A1B9A'
-            },
-            { 
-              name: '🎭 MEDENIÝET', 
-              desc: 'Medeni we sungat wakalary',
-              color: '#EF6C00'
-            },
-            { 
-              name: '🏥 SAGLYK', 
-              desc: 'Saglygy goraýyş maslahatlar',
-              color: '#C62828'
-            },
-            { 
-              name: '📚 BILIM', 
-              desc: 'Bilim we okuw materiallar',
-              color: '#283593'
-            },
-            { 
-              name: '👨‍🎓 ÝAŞLAR', 
-              desc: 'Ýaşlar üçin meňzeşlikler',
-              color: '#00838F'
-            }
-          ].map((category, index) => (
-            <div 
-              key={index}
-              style={{
-                background: category.color,
-                color: 'white',
-                padding: '25px',
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '25px' }}>
+            <div style={{
+              background: '#008000',
+              color: 'white',
+              width: '60px',
+              height: '60px',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '1.8rem'
+            }}>
+              🎉
+            </div>
+            <div>
+              <h2 style={{ 
+                color: '#006600', 
+                margin: '0 0 5px 0',
+                fontSize: '2rem'
+              }}>
+                Hoş geldiňiz!
+              </h2>
+              <p style={{ margin: 0, color: '#666', fontSize: '1.1rem' }}>
+                Ertit blogyna hoş geldiňiz
+              </p>
+            </div>
+          </div>
+          
+          <div style={{ fontSize: '1.15rem', lineHeight: '1.7', color: '#444' }}>
+            <p>
+              <strong>Ertit</strong> - bu Türkmenistanyň iň täze blog platformasy. 
+              Bu ýerde <strong style={{ color: '#008000' }}>täze habarlar, sport wakalar, 
+              tehnologik täzelikler, medeniýet, saglyk, bilim we ýaşlar</strong> barada 
+              hünärli makalalar.
+            </p>
+            <p>
+              Her bir ulanyjy öz makalasyny ýazyp bilýär. Makala moderator tarapyndan 
+              barlanylýar we <strong style={{ color: '#CC0000' }}>5-10 minutdan soň</strong> 
+              sahypada görkezilýär.
+            </p>
+          </div>
+        </section>
+
+        {/* 7 категорий */}
+        <section style={{ marginBottom: '50px' }}>
+          <div style={{
+            textAlign: 'center',
+            marginBottom: '35px'
+          }}>
+            <h2 style={{
+              color: '#008000',
+              fontSize: '2.2rem',
+              margin: '0 0 15px 0',
+              position: 'relative',
+              display: 'inline-block'
+            }}>
+              📚 7 SANY KATEGORIÝA
+              <div style={{
+                position: 'absolute',
+                bottom: '-10px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '100px',
+                height: '4px',
+                background: '#CC0000',
+                borderRadius: '2px'
+              }}></div>
+            </h2>
+            <p style={{ 
+              color: '#666', 
+              fontSize: '1.1rem',
+              maxWidth: '600px',
+              margin: '0 auto'
+            }}>
+              Her bir kategoriýada täze makalalar we gyzykly maglumatlar
+            </p>
+          </div>
+          
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '25px'
+          }}>
+            {[
+              { 
+                name: '📰 TÄZE HABARLAR', 
+                desc: 'Soňky habarlar we wakalar',
+                color: '#2E7D32',
+                count: 1,
+                icon: '📰'
+              },
+              { 
+                name: '⚽ SPORT', 
+                desc: 'Sport ýaryşlary we çempionatlar',
+                color: '#1565C0',
+                count: 0,
+                icon: '⚽'
+              },
+              { 
+                name: '💻 TEHNOLOGIÝALAR', 
+                desc: 'Tehnika we programmalar',
+                color: '#6A1B9A',
+                count: 0,
+                icon: '💻'
+              },
+              { 
+                name: '🎭 MEDENIÝET', 
+                desc: 'Medeni we sungat wakalary',
+                color: '#EF6C00',
+                count: 0,
+                icon: '🎭'
+              },
+              { 
+                name: '🏥 SAGLYK', 
+                desc: 'Saglygy goraýyş maslahatlar',
+                color: '#C62828',
+                count: 0,
+                icon: '🏥'
+              },
+              { 
+                name: '📚 BILIM', 
+                desc: 'Bilim we okuw materiallar',
+                color: '#283593',
+                count: 0,
+                icon: '📚'
+              },
+              { 
+                name: '👨‍🎓 ÝAŞLAR', 
+                desc: 'Ýaşlar üçin meňzeşlikler',
+                color: '#00838F',
+                count: 0,
+                icon: '👨‍🎓'
+              }
+            ].map((category, index) => (
+              <a 
+                key={index}
+                href={`/category/${index + 1}`}
+                style={{
+                  background: category.color,
+                  color: 'white',
+                  padding: '30px',
+                  borderRadius: '15px',
+                  textDecoration: 'none',
+                  display: 'block',
+                  transition: 'all 0.3s ease',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  boxShadow: '0 8px 20px rgba(0,0,0,0.15)'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-10px)';
+                  e.currentTarget.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.15)';
+                }}
+              >
+                <div style={{
+                  position: 'absolute',
+                  top: '20px',
+                  right: '20px',
+                  fontSize: '2rem',
+                  opacity: '0.2'
+                }}>
+                  {category.icon}
+                </div>
+                
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '15px' }}>
+                  <div style={{
+                    background: 'rgba(255,255,255,0.2)',
+                    width: '50px',
+                    height: '50px',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5rem'
+                  }}>
+                    {category.icon}
+                  </div>
+                  <h3 style={{ 
+                    margin: 0, 
+                    fontSize: '1.4rem',
+                    flex: 1
+                  }}>
+                    {category.name}
+                  </h3>
+                </div>
+                
+                <p style={{ 
+                  margin: '0 0 20px 0', 
+                  opacity: '0.95',
+                  fontSize: '1rem',
+                  minHeight: '40px'
+                }}>
+                  {category.desc}
+                </p>
+                
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center'
+                }}>
+                  <div style={{
+                    background: 'rgba(255,255,255,0.2)',
+                    padding: '6px 18px',
+                    borderRadius: '20px',
+                    fontSize: '0.9rem',
+                    fontWeight: 'bold'
+                  }}>
+                    {category.count} makala
+                  </div>
+                  <div style={{
+                    fontSize: '1.2rem',
+                    opacity: '0.8'
+                  }}>
+                    →
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* Как работает */}
+        <section style={{
+          background: 'linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%)',
+          padding: '40px',
+          borderRadius: '15px',
+          marginBottom: '50px',
+          boxShadow: '0 5px 20px rgba(33, 150, 243, 0.1)'
+        }}>
+          <h2 style={{ 
+            color: '#0D47A1', 
+            textAlign: 'center',
+            fontSize: '2rem',
+            margin: '0 0 40px 0'
+          }}>
+            🔄 Ertit nähili işleýär?
+          </h2>
+          
+          <div style={{ 
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '25px'
+          }}>
+            {[
+              { 
+                step: '1', 
+                title: 'Registrasiýa', 
+                desc: 'Nickname saýlap, hasap açyň',
+                icon: '📝'
+              },
+              { 
+                step: '2', 
+                title: 'Makala ýazmak', 
+                desc: 'Kategoriýa saýlap, makala ýazyň',
+                icon: '✍️'
+              },
+              { 
+                step: '3', 
+                title: 'Moderasiýa', 
+                desc: 'Moderator 5-10 minut barlar',
+                icon: '👁️'
+              },
+              { 
+                step: '4', 
+                title: 'Ýerleşdirme', 
+                desc: 'Barlanan makala ýerleşdirilýär',
+                icon: '✅'
+              }
+            ].map((item, index) => (
+              <div key={index} style={{
+                background: 'white',
+                padding: '30px',
                 borderRadius: '12px',
-                boxShadow: '0 5px 15px rgba(0,0,0,0.2)',
+                textAlign: 'center',
+                boxShadow: '0 5px 15px rgba(0,0,0,0.05)',
                 transition: 'transform 0.3s',
-                cursor: 'pointer'
+                position: 'relative'
               }}
               onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
               onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-            >
-              <h3 style={{ margin: '0 0 10px 0', fontSize: '1.3rem' }}>
-                {category.name}
-              </h3>
-              <p style={{ margin: '0', opacity: '0.9', fontSize: '0.95rem' }}>
-                {category.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Как работает */}
-      <section style={{
-        background: '#e3f2fd',
-        padding: '25px',
-        borderRadius: '10px',
-        marginBottom: '30px'
-      }}>
-        <h2 style={{ color: '#0D47A1' }}>🔄 Ertit nähili işleýär?</h2>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', marginTop: '20px' }}>
-          {[
-            { step: '1', title: 'Registrasiýa', desc: 'Nickname saýlap, hasap açyň' },
-            { step: '2', title: 'Makala ýazmak', desc: 'Kategoriýa saýlap, makala ýazyň' },
-            { step: '3', title: 'Moderasiýa', desc: 'Moderator 5-10 minut barlar' },
-            { step: '4', title: 'Ýerleşdirme', desc: 'Barlanan makala ýerleşdirilýär' }
-          ].map((item) => (
-            <div key={item.step} style={{
-              background: 'white',
-              padding: '20px',
-              borderRadius: '8px',
-              flex: '1',
-              minWidth: '200px',
-              textAlign: 'center'
-            }}>
-              <div style={{
-                background: '#008000',
-                color: 'white',
-                width: '40px',
-                height: '40px',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 15px auto',
-                fontWeight: 'bold'
-              }}>
-                {item.step}
+              >
+                <div style={{
+                  position: 'absolute',
+                  top: '-20px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: '#0D47A1',
+                  color: 'white',
+                  width: '45px',
+                  height: '45px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontWeight: 'bold',
+                  fontSize: '1.3rem',
+                  boxShadow: '0 4px 10px rgba(13, 71, 161, 0.3)'
+                }}>
+                  {item.icon}
+                </div>
+                
+                <h3 style={{ 
+                  margin: '25px 0 15px 0', 
+                  color: '#0D47A1',
+                  fontSize: '1.4rem'
+                }}>
+                  {item.title}
+                </h3>
+                <p style={{ 
+                  margin: 0, 
+                  color: '#555',
+                  lineHeight: '1.5'
+                }}>
+                  {item.desc}
+                </p>
+                
+                <div style={{
+                  marginTop: '15px',
+                  color: '#0D47A1',
+                  fontWeight: 'bold',
+                  fontSize: '0.9rem'
+                }}>
+                  Step {item.step}
+                </div>
               </div>
-              <h3 style={{ margin: '0 0 10px 0', color: '#008000' }}>
-                {item.title}
-              </h3>
-              <p style={{ margin: '0', fontSize: '0.9rem' }}>
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+          
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+            <a href="/register" style={{
+              display: 'inline-block',
+              background: '#0D47A1',
+              color: 'white',
+              padding: '15px 35px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              fontSize: '1.1rem',
+              boxShadow: '0 5px 15px rgba(13, 71, 161, 0.3)'
+            }}>
+              🚀 Şu wagt registrasiýa boluň
+            </a>
+          </div>
+        </section>
 
-      {/* Футер */}
-      <footer style={{
-        textAlign: 'center',
-        marginTop: '40px',
-        padding: '20px',
-        borderTop: '2px solid #008000',
-        color: '#666'
-      }}>
-        <p>© 2024 <strong>Ertit</strong> - Türkmenistanyň blog platformasy</p>
-        <p>🇹🇲 "Her bir söz, her bir pikiriň gymmaty"</p>
-      </footer>
+        {/* Призыв к действию */}
+        <section style={{
+          background: 'linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%)',
+          padding: '50px',
+          borderRadius: '15px',
+          textAlign: 'center',
+          marginBottom: '40px',
+          boxShadow: '0 5px 20px rgba(255, 193, 7, 0.1)'
+        }}>
+          <div style={{
+            fontSize: '3rem',
+            marginBottom: '20px'
+          }}>
+            🚀
+          </div>
+          <h2 style={{ 
+            color: '#856404', 
+            fontSize: '2.2rem',
+            margin: '0 0 20px 0'
+          }}>
+            Öz makalaňyzy ýazmaga taýýnmy?
+          </h2>
+          <p style={{ 
+            fontSize: '1.2rem', 
+            color: '#856404',
+            maxWidth: '700px',
+            margin: '0 auto 30px auto',
+            lineHeight: '1.6'
+          }}>
+            Ertit blogynda her bir ulanyjy öz pikirlerni, tejribelerini we 
+            bilimlerini paýlaşyp biler. Diňe registrasiýa bolup, başlaň!
+          </p>
+          <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a href="/register" style={{
+              background: '#856404',
+              color: 'white',
+              padding: '15px 40px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              fontSize: '1.1rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '10px'
+            }}>
+              📝 Registrasiýa
+            </a>
+            <a href="/articles" style={{
+              background: 'transparent',
+              color: '#856404',
+              padding: '15px 40px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              fontSize: '1.1rem',
+              border: '2px solid #856404',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '10px'
+            }}>
+              📖 Makalalar
+            </a>
+          </div>
+        </section>
+
+        {/* Футер сайта */}
+        <footer style={{
+          marginTop: '60px',
+          padding: '40px 20px',
+          background: '#2c3e50',
+          color: 'white',
+          borderRadius: '15px',
+          textAlign: 'center'
+        }}>
+          <div style={{ marginBottom: '30px' }}>
+            <div style={{
+              width: '70px',
+              height: '70px',
+              background: 'linear-gradient(135deg, #008000, #CC0000)',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '2rem',
+              fontWeight: 'bold',
+              margin: '0 auto 20px auto'
+            }}>
+              E
+            </div>
+            <h3 style={{ 
+              margin: '0 0 15px 0',
+              fontSize: '1.8rem'
+            }}>
+              ERTIT
+            </h3>
+            <p style={{ 
+              margin: '0 auto 25px auto',
+              maxWidth: '600px',
+              opacity: '0.8',
+              lineHeight: '1.6'
+            }}>
+              Türkmenistanyň iň täze blog platformasy. Her bir söz, her bir pikiriň gymmaty.
+            </p>
+          </div>
+          
+          <div style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            gap: '30px',
+            flexWrap: 'wrap',
+            marginBottom: '30px'
+          }}>
+            <a href="/" style={{ color: 'white', textDecoration: 'none' }}>Baş sahypa</a>
+            <a href="/categories" style={{ color: 'white', textDecoration: 'none' }}>Kategoriýalar</a>
+            <a href="/articles" style={{ color: 'white', textDecoration: 'none' }}>Makalalar</a>
+            <a href="/about" style={{ color: 'white', textDecoration: 'none' }}>Biz barada</a>
+            <a href="/register" style={{ color: '#FFD700', textDecoration: 'none', fontWeight: 'bold' }}>Registrasiýa</a>
+          </div>
+          
+          <div style={{ 
+            borderTop: '1px solid rgba(255,255,255,0.1)', 
+            paddingTop: '25px',
+            opacity: '0.7',
+            fontSize: '0.95rem'
+          }}>
+            <p style={{ margin: '0 0 10px 0' }}>
+              © 2024 <strong>Ertit</strong> - Türkmenistanyň blog platformasy
+            </p>
+            <p style={{ margin: 0 }}>
+              🇹🇲 "Bilim - güýç, paýlaşmak - bagt"
+            </p>
+          </div>
+        </footer>
+      </div>
     </div>
-  )
+  );
 }
