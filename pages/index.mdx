@@ -1,4 +1,14 @@
+export default function Home() {// В самое начало файла, после "export default function Home() {"
+import Navbar from '../components/Navbar';
+
 export default function Home() {
+  return (
+    <div>
+      <Navbar /> {/* Добавьте эту строку */}
+      {/* остальной код остается */}
+    </div>
+  );
+}
   return (
     <div style={{
       fontFamily: 'Arial, sans-serif',
