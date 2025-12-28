@@ -9,7 +9,6 @@ export default function Navbar() {
       alignItems: 'center',
       boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
     }}>
-      {/* Логотип */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
         <div style={{
           width: '40px',
@@ -35,7 +34,6 @@ export default function Navbar() {
         </a>
       </div>
 
-      {/* Меню */}
       <div style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
         <a href="/" style={{ color: 'white', textDecoration: 'none' }}>
           🏠 Baş sahypa
@@ -50,7 +48,6 @@ export default function Navbar() {
           ℹ️ Biz barada
         </a>
         
-        {/* Кнопка регистрации */}
         <a href="/register" style={{
           background: '#CC0000',
           color: 'white',
